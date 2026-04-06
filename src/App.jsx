@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BlogSection from "./components/BlogSection";
 import BestSelling from "./components/BestSelling";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 
 // 🔹 Pages
 import Products from "./pages/Products";
