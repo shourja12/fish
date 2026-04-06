@@ -1,12 +1,25 @@
 import { Parallax } from "react-parallax";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+  const [objectFit, setObjectFit] = useState('cover');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setObjectFit(window.innerWidth < 768 ? 'contain' : 'cover');
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <Parallax
       bgImage="https://images.unsplash.com/photo-1544551763-46a013bb70d5"
       strength={200}
       bgImageStyle={{
-        objectFit: 'cover',
+        objectFit: objectFit,
         objectPosition: 'center',
         width: '100%',
         height: '100vh'
