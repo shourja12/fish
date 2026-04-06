@@ -7,116 +7,123 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-12 sm:top-16 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] max-w-7xl z-30">
+    <nav className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
 
-      {/* 🌟 Navbar Container */}
-      <div className="bg-white/80 backdrop-blur-lg border border-gray-200 rounded-2xl px-4 sm:px-6 py-3 shadow-md">
+      {/* Desktop Navbar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
 
-        <div className="flex items-center justify-between gap-2 sm:gap-6">
-
-          {/* 🐠 LEFT: Logo */}
-          <Link to="/" className="text-lg sm:text-xl font-bold text-primary whitespace-nowrap">
+          {/* Logo */}
+          <Link to="/" className="text-xl sm:text-2xl font-bold text-primary">
             FishStore
           </Link>
 
-          {/* 🔍 CENTER: Search Bar (Hidden on Mobile) */}
-          <div className="hidden md:flex items-center flex-1 max-w-xl bg-white border border-gray-200 px-4 py-2 rounded-full shadow-sm">
-            <FaSearch className="text-gray-400 mr-3" />
-            <input
-              type="text"
-              placeholder="Search fish, tanks, accessories..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-transparent outline-none text-sm text-gray-700 placeholder-gray-400"
-            />
+          {/* Desktop Search */}
+          <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
+            <div className="relative w-full">
+              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search fish, tanks, accessories..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
           </div>
 
-          {/* 🧭 RIGHT: Menu (Desktop) */}
-          <div className="hidden lg:flex items-center space-x-2 text-xs sm:text-sm">
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-8">
             <Link
               to="/"
-              className="px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-white/50 backdrop-blur-md text-gray-700 hover:text-primary hover:border-primary/40 hover:bg-white transition duration-300"
+              className="text-gray-700 hover:text-primary transition duration-300 font-medium"
             >
               Home
             </Link>
             <Link
               to="/products"
-              className="px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-white/50 backdrop-blur-md text-gray-700 hover:text-primary hover:border-primary/40 hover:bg-white transition duration-300"
+              className="text-gray-700 hover:text-primary transition duration-300 font-medium"
             >
               Products
             </Link>
             <Link
               to="#"
-              className="px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-white/50 backdrop-blur-md text-gray-700 hover:text-primary hover:border-primary/40 hover:bg-white transition duration-300"
+              className="text-gray-700 hover:text-primary transition duration-300 font-medium"
             >
-              About Us
+              About
             </Link>
             <Link
               to="#"
-              className="px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-white/50 backdrop-blur-md text-gray-700 hover:text-primary hover:border-primary/40 hover:bg-white transition duration-300"
+              className="text-gray-700 hover:text-primary transition duration-300 font-medium"
             >
               Contact
             </Link>
           </div>
 
-          {/* 📱 Mobile Menu Toggle */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-primary"
+            className="lg:hidden p-2 text-gray-700 hover:text-primary"
           >
             {mobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
 
         </div>
+      </div>
 
-        {/* 📱 Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden mt-4 pt-4 border-t border-gray-200 flex flex-col gap-2">
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200">
+          <div className="px-4 py-4 space-y-4">
+
             {/* Mobile Search */}
-            <div className="flex items-center bg-white border border-gray-200 px-3 py-2 rounded-full shadow-sm mb-2">
-              <FaSearch className="text-gray-400 mr-2 text-sm" />
+            <div className="relative">
+              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-transparent outline-none text-xs text-gray-700 placeholder-gray-400"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
             {/* Mobile Links */}
-            <Link
-              to="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2 rounded-full bg-gray-50 text-gray-700 hover:text-primary hover:bg-blue-50 transition text-sm"
-            >
-              Home
-            </Link>
-            <Link
-              to="/products"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2 rounded-full bg-gray-50 text-gray-700 hover:text-primary hover:bg-blue-50 transition text-sm"
-            >
-              Products
-            </Link>
-            <Link
-              to="#"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2 rounded-full bg-gray-50 text-gray-700 hover:text-primary hover:bg-blue-50 transition text-sm"
-            >
-              About Us
-            </Link>
-            <Link
-              to="#"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2 rounded-full bg-gray-50 text-gray-700 hover:text-primary hover:bg-blue-50 transition text-sm"
-            >
-              Contact
-            </Link>
-          </div>
-        )}
+            <div className="space-y-2">
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition"
+              >
+                Home
+              </Link>
+              <Link
+                to="/products"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition"
+              >
+                Products
+              </Link>
+              <Link
+                to="#"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition"
+              >
+                About
+              </Link>
+              <Link
+                to="#"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2 text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition"
+              >
+                Contact
+              </Link>
+            </div>
 
-      </div>
-    </div>
+          </div>
+        </div>
+      )}
+
+    </nav>
   );
 }

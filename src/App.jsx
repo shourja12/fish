@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
 // 🔹 Components
-import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BlogSection from "./components/BlogSection";
@@ -16,12 +15,11 @@ function App() {
   return (
     <div className="bg-gradient-to-b from-blue-100 to-white min-h-screen">
 
-      {/* 🔝 Top Section */}
-      <TopBar />
+      {/* 🔝 Navbar */}
       <Navbar />
 
       {/* 📄 Main Content */}
-      <div className="pt-24 sm:pt-28 md:pt-32 lg:pt-36">
+      <div className="pt-0">
 
         <Routes>
 
