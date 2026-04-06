@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function TopBar() {
   return (
-    <div className="w-full bg-gradient-to-r from-blue-100 to-blue-200 py-2 sm:py-3 px-4 sm:px-6 flex justify-between items-center flex-wrap gap-2 sm:gap-3">
+    <div className="fixed top-0 left-0 right-0 z-40 w-full bg-gradient-to-r from-blue-100 to-blue-200 py-2 sm:py-3 px-4 sm:px-6 flex justify-between items-center flex-wrap gap-2 sm:gap-3 shadow-sm">
 
       {/* 👤 Left: Profile */}
       <div className="flex items-center gap-2 sm:gap-3">

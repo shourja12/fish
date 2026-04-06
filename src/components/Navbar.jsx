@@ -7,7 +7,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] max-w-7xl z-50">
+    <div className="fixed top-12 sm:top-16 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] max-w-7xl z-30">
 
       {/* 🌟 Navbar Container */}
       <div className="bg-white/80 backdrop-blur-lg border border-gray-200 rounded-2xl px-4 sm:px-6 py-3 shadow-md">
