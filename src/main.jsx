@@ -15,7 +15,7 @@ AOS.init({
 // ✅ Render App ONLY ONCE
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/fish/">
       <App />
     </BrowserRouter>
   </React.StrictMode>
