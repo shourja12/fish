@@ -33,18 +33,19 @@ export default function BestSelling() {
   return (
     <section className="py-24 bg-white" data-aos="fade-up">
 
-      <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-gray-900">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 sm:mb-12 px-4 text-gray-900">
         Best Selling Products
       </h2>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4">
 
         <Swiper
-          spaceBetween={20}
+          spaceBetween={16}
           slidesPerView={1}
           breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            480: { slidesPerView: 1.5, spaceBetween: 12 },
+            640: { slidesPerView: 2, spaceBetween: 16 },
+            1024: { slidesPerView: 3, spaceBetween: 20 },
           }}
         >
 

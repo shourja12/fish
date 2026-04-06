@@ -21,7 +21,7 @@ function App() {
       <Navbar />
 
       {/* 📄 Main Content */}
-      <div className="pt-28">
+      <div className="pt-20 sm:pt-24 md:pt-28 lg:pt-32">
 
         <Routes>
 

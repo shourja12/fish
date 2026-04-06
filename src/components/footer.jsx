@@ -2,27 +2,27 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-blue-100 to-blue-200 pt-16 pb-10 mt-20">
+    <footer className="bg-gradient-to-b from-blue-100 to-blue-200 pt-12 sm:pt-16 pb-8 sm:pb-10 mt-20">
 
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10 text-center md:text-left">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 text-center sm:text-left mb-8">
 
         {/* Brand */}
         <div>
-          <h1 className="text-2xl font-bold text-blue-700 mb-3">
+          <h1 className="text-xl sm:text-2xl font-bold text-blue-700 mb-2 sm:mb-3">
             FishStore
           </h1>
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 text-xs sm:text-sm">
             Premium destination for marine, freshwater fish & aquatic plants.
           </p>
         </div>
 
         {/* Links */}
         <div>
-          <h2 className="text-lg font-semibold mb-3 text-gray-800">
+          <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-gray-800">
             Quick Links
           </h2>
 
-          <div className="flex flex-col space-y-2 text-gray-600 text-sm">
+          <div className="flex flex-col space-y-1 sm:space-y-2 text-gray-600 text-xs sm:text-sm">
             <a href="#" className="hover:text-blue-700 transition">Marine Fish</a>
             <a href="#" className="hover:text-blue-700 transition">Freshwater Fish</a>
             <a href="#" className="hover:text-blue-700 transition">Aquatic Plants</a>
@@ -32,11 +32,11 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h2 className="text-lg font-semibold mb-3 text-gray-800">
+          <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-gray-800">
             Contact
           </h2>
 
-          <div className="text-gray-600 text-sm space-y-2">
+          <div className="text-gray-600 text-xs sm:text-sm space-y-1 sm:space-y-2">
             <p>📍 Kolkata, India</p>
             <p>📞 +91 XXXXXXXX</p>
             <p>✉️ fishstore@email.com</p>
@@ -46,9 +46,9 @@ export default function Footer() {
       </div>
 
       {/* Social */}
-      <div className="mt-10 flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-3 sm:space-y-4">
 
-        <div className="flex space-x-6 text-xl text-gray-600">
+        <div className="flex space-x-4 sm:space-x-6 text-lg sm:text-xl text-gray-600">
 
           <a href="#" className="hover:text-blue-700 transition hover:scale-110">
             <FaFacebookF />
